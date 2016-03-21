@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * Created by moby on 3/15/16.
  */
-public class IndexActivity extends Activity implements AdapterView.OnItemClickListener {
+public class IndexActivity extends Activity implements AdapterView.OnItemClickListener, View.OnClickListener {
     private ImageButton ibtn_return;
     private TextView tv_index_user;
     private TextView tv_index_date;
@@ -104,5 +104,16 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         intent_index2patrolIndex.putExtra("user", username);
         intent_index2patrolIndex.putExtra("itemIndex", position);
         startActivity(intent_index2patrolIndex);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btn_patrol:
+                break;
+            default:
+                break;
+
+        }
     }
 }
