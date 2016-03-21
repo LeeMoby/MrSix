@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MrSix</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_enter">进入系统</string>
+    <string name="et_user_hint">请输入您的姓名</string>
+    <string name="index_btn_patrol">巡检</string>
+    <string name="index_tody">今天</string>
+    <string name="tv_index_portal">巡检</string>
+    <string name="tv_index_anomaly">异常</string>
+    <string name="tv_index_photo">照片</string>
+    <string name="tv_patrol_index_anomaly">异常:</string>
+</resources>

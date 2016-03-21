@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:background="@color/colorWhite"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/tv_patrol_index_listview_layout_left"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="@drawable/room_green"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_patrol_index_listview_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88"
+            android:textSize="24sp"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:id="@+id/tv_patrol_index_listview_room_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ROOM"
+            android:textSize="12sp"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tv_patrol_index_listview_layout_right"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/detail_green"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_patrol_index_listview_temperature"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="88.8 ℃"
+                style="@style/patrol_index_listview_font"/>
+            <TextView
+                android:id="@+id/tv_patrol_index_listview_humidity"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="88.8 %"
+                style="@style/patrol_index_listview_font"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_patrol_index_listview_patrol_already"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="888"
+                style="@style/patrol_index_listview_font" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                style="@style/patrol_index_listview_font"/>
+            <TextView
+                android:id="@+id/tv_patrol_index_listview_patrol_count"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="888"
+                style="@style/patrol_index_listview_font"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_patrol_index_anomaly"
+                style="@style/patrol_index_listview_font"/>
+            <TextView
+                android:id="@+id/tv_patrol_index_listview_anomaly"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="88"
+                style="@style/patrol_index_listview_font"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
