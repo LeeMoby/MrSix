@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">MrSix</string>
+    <string name="app_name">机房设备巡检系统</string>
     <string name="action_settings">Settings</string>
+    <string name="scan">scan</string>
+    <string name="scan_gbk">scan_gbk</string>
+    <string name="scan_utf_8">scan_utf_8</string>
     <string name="btn_enter">进入系统</string>
     <string name="et_user_hint">请输入您的姓名</string>
     <string name="index_btn_patrol">巡检</string>
@@ -9,4 +12,12 @@
     <string name="tv_index_anomaly">异常</string>
     <string name="tv_index_photo">照片</string>
     <string name="tv_patrol_index_anomaly">异常:</string>
+    <!-- ##### zxing-lib ##### -->
+    <string name="zxing_msg_default_status">请将二维码置于取景框内扫描</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="picture">拍照</string>
+    <string name="cabinet_detail">详情:</string>
+    <string name="cabinet_anomaly">异常:</string>
+
 </resources>

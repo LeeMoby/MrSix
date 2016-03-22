@@ -37,12 +37,13 @@
             android:text="@string/index_tody"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/btn_patrol"
+        <TextView
+            android:id="@+id/tv_patrol_index_date"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_marginLeft="60dp"
-            android:text="@string/index_btn_patrol" />
+            android:text="2016-03-15"
+            android:gravity="center"/>
 
     </LinearLayout>
 

@@ -3,6 +3,8 @@ package com.moby.mrsix;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -17,12 +19,13 @@ import java.util.Map;
 /**
  * Created by moby on 3/16/16.
  */
-public class PatrolIndexActivity extends Activity {
+public class PatrolIndexActivity extends Activity implements View.OnClickListener {
+    private static final int REQUEST_CODE = 200;
     private String username;
     private int patrolTimes;
+    private Button btn_patrol;
     private Intent intent_index2patrolIndex;
     private TextView tv_patrol_index_user;
-    private TextView tv_patrol_index_date;
     private TextView tv_patrol_index_title;
     private TextView tv_patrol_index_time;
     private ListView lv_patrol_index;
@@ -39,7 +42,6 @@ public class PatrolIndexActivity extends Activity {
     private String[] anomalyArray;
     private List<Map<String, Object>> dataList;
     private String titleStr;
-    private String dateStr;
     private String patrolTimeStr;
 
     @Override
@@ -52,9 +54,9 @@ public class PatrolIndexActivity extends Activity {
         patrolTimes = intent_index2patrolIndex.getIntExtra("itemIndex", 0);
         tv_patrol_index_user = (TextView) findViewById(R.id.tv_patrol_index_user);
         tv_patrol_index_title = (TextView) findViewById(R.id.tv_patrol_index_title);
-        tv_patrol_index_date = (TextView) findViewById(R.id.tv_patrol_index_date);
         lv_patrol_index = (ListView) findViewById(R.id.lv_patrol_index);
         tv_patrol_index_time = (TextView) findViewById(R.id.tv_patrol_index_time);
+        btn_patrol = (Button) findViewById(R.id.btn_patrol);
         dataList = new ArrayList<Map<String, Object>>();
         // init data
         initListViewData();
@@ -66,10 +68,10 @@ public class PatrolIndexActivity extends Activity {
         tv_patrol_index_user.setText(username);
         initTitle();
         tv_patrol_index_title.setText(titleStr);
-        initDate();
-        tv_patrol_index_date.setText(dateStr);
         initPatrolTime();
         tv_patrol_index_time.setText(patrolTimeStr);
+
+        btn_patrol.setOnClickListener(this);
 
     }
 
@@ -79,11 +81,6 @@ public class PatrolIndexActivity extends Activity {
 
     }
 
-    private void initDate() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateStr = dateFormat.format(new Date());
-
-    }
 
     private void initTitle() {
         titleStr = "This is first patrol";
@@ -129,6 +126,43 @@ public class PatrolIndexActivity extends Activity {
             aMap.put(fromArray[6], anomalyArray[i]);
             dataList.add(aMap);
 
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.btn_patrol:
+                /**
+                 * 启动摄像头,扫描二维码
+                 */
+                Intent intent = new Intent();
+                intent.setAction(Intents.Scan.ACTION);
+                // intent.putExtra(Intents.Scan.MODE, Intents.Scan.QR_CODE_MODE);
+                intent.putExtra(Intents.Scan.CHARACTER_SET, "UTF-8"); // GBK | null
+                intent.putExtra(Intents.Scan.WIDTH, 800);
+                intent.putExtra(Intents.Scan.HEIGHT, 600);
+                // intent.putExtra(Intents.Scan.PROMPT_MESSAGE, "type your prompt message");
+                intent.setClass(this, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (null != data && requestCode == REQUEST_CODE) {
+            switch (resultCode) {
+                case Activity.RESULT_OK:
+                    data.setClass(this, CaptureResultActivity.class);
+                    startActivity(data);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

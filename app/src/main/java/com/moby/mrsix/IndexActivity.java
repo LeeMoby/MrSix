@@ -12,7 +12,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,10 +23,11 @@ import java.util.Map;
  * Created by moby on 3/15/16.
  */
 public class IndexActivity extends Activity implements AdapterView.OnItemClickListener, View.OnClickListener {
+
     private ImageButton ibtn_return;
     private TextView tv_index_user;
     private TextView tv_index_date;
-    private Button btn_patrol;
+    private TextView tv_patrol_index_date;
     private TextView tv_index_patrol_number;
     private TextView tv_index_anomaly_number;
     private TextView tv_index_photo_number;
@@ -39,6 +42,8 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
     private String[] photoArray;
     private Intent intent_init2index;
     private Intent intent_index2patrolIndex;
+    private String dateStr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +53,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         ibtn_return = (ImageButton) findViewById(R.id.ibtn_return);
         tv_index_user = (TextView) findViewById(R.id.tv_index_user);
         tv_index_date = (TextView) findViewById(R.id.tv_index_date);
-        btn_patrol = (Button) findViewById(R.id.btn_patrol);
+        tv_patrol_index_date = (TextView) findViewById(R.id.tv_patrol_index_date);
         tv_index_patrol_number = (TextView) findViewById(R.id.tv_index_patrol_number);
         tv_index_anomaly_number = (TextView) findViewById(R.id.tv_index_anomaly_number);
         tv_index_photo_number = (TextView) findViewById(R.id.tv_index_photo_number);
@@ -65,6 +70,8 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         tv_index_anomaly_number.setText("23");
         tv_index_photo_number.setText("36");
 
+        initDate();
+        tv_patrol_index_date.setText(dateStr);
         //init ListView data
 
         initListViewData();
@@ -97,6 +104,12 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         }
 
     }
+    private void initDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateStr = dateFormat.format(new Date());
+
+    }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -108,12 +121,13 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.btn_patrol:
-                break;
+        switch (v.getId()) {
+
             default:
                 break;
 
         }
     }
+
+
 }
