@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.moby.mrsix.zxing;
+package com.moby.mrsix;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +9,9 @@ import android.widget.Button;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.moby.mrsix.CaptureResultActivity;
-import com.moby.mrsix.R;
+
+import com.moby.mrsix.zxing.CaptureActivity;
+import com.moby.mrsix.zxing.Intents;
 
 /**
  * @author yumin

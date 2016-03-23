@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by moby on 3/15/16.
  */
 public class IndexActivity extends Activity implements AdapterView.OnItemClickListener, View.OnClickListener {
-
+    private BaseApplication baseApplication;
     private ImageButton ibtn_return;
     private TextView tv_index_user;
     private TextView tv_index_date;
@@ -40,7 +40,6 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
     private String[] timesArray;
     private String[] anomalyArray;
     private String[] photoArray;
-    private Intent intent_init2index;
     private Intent intent_index2patrolIndex;
     private String dateStr;
 
@@ -50,6 +49,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_main);
         //init
+        baseApplication = (BaseApplication)getApplication();
         ibtn_return = (ImageButton) findViewById(R.id.ibtn_return);
         tv_index_user = (TextView) findViewById(R.id.tv_index_user);
         tv_index_date = (TextView) findViewById(R.id.tv_index_date);
@@ -60,10 +60,9 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         lv_index = (ListView) findViewById(R.id.lv_index);
         dataList = new ArrayList<Map<String, Object>>();
         // init intent
-        intent_init2index = getIntent();
         intent_index2patrolIndex = new Intent(this, PatrolIndexActivity.class);
         //init user
-        username = intent_init2index.getStringExtra("user");
+        username = baseApplication.getLogin_user();
         tv_index_user.setText(username);
         //init today data
         tv_index_patrol_number.setText("127");
@@ -113,9 +112,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show();
-        intent_index2patrolIndex.putExtra("user", username);
-        intent_index2patrolIndex.putExtra("itemIndex", position);
+        baseApplication.setPatrol_times(position);
         startActivity(intent_index2patrolIndex);
     }
 

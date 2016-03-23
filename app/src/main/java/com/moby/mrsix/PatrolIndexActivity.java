@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.moby.mrsix.zxing.CaptureActivity;
 import com.moby.mrsix.zxing.Intents;
 
+import org.apache.http.message.BasicHeader;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,16 +23,15 @@ import java.util.Map;
  * Created by moby on 3/16/16.
  */
 public class PatrolIndexActivity extends Activity implements View.OnClickListener {
+    private BaseApplication baseApplication;
     private static final int REQUEST_CODE = 200;
     private String username;
     private int patrolTimes;
     private Button btn_patrol;
-    private Intent intent_index2patrolIndex;
     private TextView tv_patrol_index_user;
     private TextView tv_patrol_index_title;
     private TextView tv_patrol_index_time;
     private ListView lv_patrol_index;
-    private SimpleAdapter simpleAdapter;
     private PatrolIndexAdapter patrolIndexAdapter;
     private String[] fromArray;
     private int[] toArray;
@@ -50,9 +51,9 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patrol_index);
         //init
-        intent_index2patrolIndex = getIntent();
-        username = intent_index2patrolIndex.getStringExtra("user");
-        patrolTimes = intent_index2patrolIndex.getIntExtra("itemIndex", 0);
+        baseApplication = (BaseApplication)getApplication();
+        username = baseApplication.getLogin_user();
+        patrolTimes = baseApplication.getPatrol_times();
         tv_patrol_index_user = (TextView) findViewById(R.id.tv_patrol_index_user);
         tv_patrol_index_title = (TextView) findViewById(R.id.tv_patrol_index_title);
         lv_patrol_index = (ListView) findViewById(R.id.lv_patrol_index);
@@ -62,7 +63,6 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         // init data
         initListViewData();
         //init adapter
-//        simpleAdapter = new SimpleAdapter(this, dataList, R.layout.patrol_index_listview, fromArray, toArray);
         patrolIndexAdapter = new PatrolIndexAdapter(this, dataList);
         lv_patrol_index.setAdapter(patrolIndexAdapter);
         // set TextView
