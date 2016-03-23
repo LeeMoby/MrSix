@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import com.google.zxing.ResultPoint;
 import com.google.zxing.ResultPointCallback;

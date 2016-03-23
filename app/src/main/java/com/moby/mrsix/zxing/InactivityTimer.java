@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

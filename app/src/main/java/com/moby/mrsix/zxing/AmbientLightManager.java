@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,8 +23,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
-import com.moby.mrsix.camera.CameraManager;
-import com.moby.mrsix.camera.FrontLightMode;
+import com.moby.mrsix.zxing.camera.CameraManager;
+import com.moby.mrsix.zxing.camera.FrontLightMode;
 
 /**
  * Detects ambient light and switches on the front light when very dark, and off again when sufficiently light.

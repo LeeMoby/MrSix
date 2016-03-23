@@ -23,7 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
-    <com.moby.mrsix.ViewfinderView
+    <com.moby.mrsix.zxing.ViewfinderView
         android:id="@+id/viewfinder_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />

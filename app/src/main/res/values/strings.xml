@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">机房设备巡检系统</string>
+    <string name="app_name">机房巡视系统</string>
     <string name="action_settings">Settings</string>
     <string name="scan">scan</string>
     <string name="scan_gbk">scan_gbk</string>

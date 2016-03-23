@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera;
+package com.moby.mrsix.zxing.camera;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,7 +25,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.moby.mrsix.PreferencesActivity;
+import com.moby.mrsix.zxing.PreferencesActivity;
 
 /**
  * A class which deals with reading, parsing, and setting the camera parameters which are used to

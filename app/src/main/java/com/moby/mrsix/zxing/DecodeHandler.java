@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
@@ -23,6 +23,7 @@ import com.google.zxing.PlanarYUVLuminanceSource;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
+import com.moby.mrsix.R;
 
 import android.os.Handler;
 import android.os.Looper;

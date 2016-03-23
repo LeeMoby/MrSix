@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera;
+package com.moby.mrsix.zxing.camera;
 
 import android.content.SharedPreferences;
-import com.moby.mrsix.PreferencesActivity;
+import com.moby.mrsix.zxing.PreferencesActivity;
 
 /**
  * Enumerates settings of the prefernce controlling the front light.

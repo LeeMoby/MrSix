@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera;
+package com.moby.mrsix.zxing.camera;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -24,8 +24,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import com.google.zxing.PlanarYUVLuminanceSource;
-import com.moby.mrsix.CaptureActivity;
-import com.moby.mrsix.camera.open.OpenCameraInterface;
+import com.moby.mrsix.zxing.CaptureActivity;
+import com.moby.mrsix.zxing.camera.open.OpenCameraInterface;
 
 import java.io.IOException;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,6 +25,8 @@ import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.moby.mrsix.R;
 
 import java.io.Closeable;
 import java.io.IOException;

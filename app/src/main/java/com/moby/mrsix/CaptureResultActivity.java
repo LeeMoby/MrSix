@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.moby.mrsix.zxing.Intents;
+
 /**
  * @author yumin
  */

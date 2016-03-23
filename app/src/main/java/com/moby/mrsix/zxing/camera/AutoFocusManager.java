@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera;
+package com.moby.mrsix.zxing.camera;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.RejectedExecutionException;
 
-import com.moby.mrsix.PreferencesActivity;
+import com.moby.mrsix.zxing.PreferencesActivity;
 
 final class AutoFocusManager implements Camera.AutoFocusCallback {
 

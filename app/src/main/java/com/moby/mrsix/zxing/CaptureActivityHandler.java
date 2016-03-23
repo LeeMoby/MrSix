@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
-import com.moby.mrsix.camera.CameraManager;
+import com.moby.mrsix.R;
+import com.moby.mrsix.zxing.camera.CameraManager;
 
 import android.app.Activity;
 import android.content.Intent;

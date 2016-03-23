@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera;
+package com.moby.mrsix.zxing.camera;
 
 import android.graphics.Point;
 import android.hardware.Camera;

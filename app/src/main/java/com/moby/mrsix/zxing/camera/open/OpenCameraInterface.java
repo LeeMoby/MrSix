@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix.camera.open;
+package com.moby.mrsix.zxing.camera.open;
 
 import android.hardware.Camera;
 import android.util.Log;

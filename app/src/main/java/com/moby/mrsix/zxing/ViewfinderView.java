@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package com.moby.mrsix;
+package com.moby.mrsix.zxing;
 
 import com.google.zxing.ResultPoint;
-import com.moby.mrsix.camera.CameraManager;
+import com.moby.mrsix.R;
+import com.moby.mrsix.zxing.camera.CameraManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

@@ -9,9 +9,10 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
+import com.moby.mrsix.zxing.CaptureActivity;
+import com.moby.mrsix.zxing.Intents;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
