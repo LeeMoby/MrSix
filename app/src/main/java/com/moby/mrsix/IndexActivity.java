@@ -79,6 +79,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         lv_index.setAdapter(simpleAdapter);
         //init listener
         lv_index.setOnItemClickListener(this);
+        ibtn_return.setOnClickListener(this);
 
 
     }
@@ -119,7 +120,9 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
+            case R.id.ibtn_return:
+                onBackPressed();
+                break;
             default:
                 break;
 

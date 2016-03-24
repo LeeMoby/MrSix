@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.moby.mrsix.zxing.CaptureActivity;
 import com.moby.mrsix.zxing.Intents;
-
-import org.apache.http.message.BasicHeader;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,9 +27,12 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
     private String username;
     private int patrolTimes;
     private Button btn_patrol;
+    private ImageButton ibtn_patrol_return;
     private TextView tv_patrol_index_user;
     private TextView tv_patrol_index_title;
     private TextView tv_patrol_index_time;
+    private ImageButton ibtn_patrol_index_left;
+    private ImageButton ibtn_patrol_index_right;
     private ListView lv_patrol_index;
     private PatrolIndexAdapter patrolIndexAdapter;
     private String[] fromArray;
@@ -54,6 +56,9 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         baseApplication = (BaseApplication)getApplication();
         username = baseApplication.getLogin_user();
         patrolTimes = baseApplication.getPatrol_times();
+        ibtn_patrol_return = (ImageButton) findViewById(R.id.ibtn_patrol_return);
+        ibtn_patrol_index_left = (ImageButton) findViewById(R.id.ibtn_patrol_index_left);
+        ibtn_patrol_index_right = (ImageButton) findViewById(R.id.ibtn_patrol_index_right);
         tv_patrol_index_user = (TextView) findViewById(R.id.tv_patrol_index_user);
         tv_patrol_index_title = (TextView) findViewById(R.id.tv_patrol_index_title);
         lv_patrol_index = (ListView) findViewById(R.id.lv_patrol_index);
@@ -73,6 +78,9 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         tv_patrol_index_time.setText(patrolTimeStr);
 
         btn_patrol.setOnClickListener(this);
+        ibtn_patrol_return.setOnClickListener(this);
+        ibtn_patrol_index_left.setOnClickListener(this);
+        ibtn_patrol_index_right.setOnClickListener(this);
 
     }
 
@@ -147,6 +155,14 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
                 intent.setClass(this, CaptureActivity.class);
                 startActivityForResult(intent, REQUEST_CODE);
                 break;
+            case R.id.ibtn_patrol_return:
+                onBackPressed();
+                break;
+            case R.id.ibtn_patrol_index_left:
+                Toast.makeText(this, "Left", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.ibtn_patrol_index_right:
+                Toast.makeText(this, "Right", Toast.LENGTH_SHORT).show();
             default:
                 break;
 
