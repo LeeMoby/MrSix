@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -21,7 +22,7 @@ import java.util.Map;
 /**
  * Created by moby on 3/16/16.
  */
-public class PatrolIndexActivity extends Activity implements View.OnClickListener {
+public class PatrolIndexActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private BaseApplication baseApplication;
     private static final int REQUEST_CODE = 200;
     private String username;
@@ -47,13 +48,14 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
     private List<Map<String, Object>> dataList;
     private String titleStr;
     private String patrolTimeStr;
+    private Intent intent_patrol2room;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patrol_index);
         //init
-        baseApplication = (BaseApplication)getApplication();
+        baseApplication = (BaseApplication) getApplication();
         username = baseApplication.getLogin_user();
         patrolTimes = baseApplication.getPatrol_times();
         ibtn_patrol_return = (ImageButton) findViewById(R.id.ibtn_patrol_return);
@@ -65,6 +67,7 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         tv_patrol_index_time = (TextView) findViewById(R.id.tv_patrol_index_time);
         btn_patrol = (Button) findViewById(R.id.btn_patrol);
         dataList = new ArrayList<Map<String, Object>>();
+        intent_patrol2room = new Intent(this, RoomActivity.class);
         // init data
         initListViewData();
         //init adapter
@@ -140,7 +143,7 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()){
+        switch (v.getId()) {
             case R.id.btn_patrol:
                 /**
                  * 启动摄像头,扫描二维码
@@ -181,5 +184,11 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
                     break;
             }
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        intent_patrol2room.putExtra("position", position);
+        startActivity(intent_patrol2room);
     }
 }

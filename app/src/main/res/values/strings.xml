@@ -19,5 +19,7 @@
     <string name="picture">拍照</string>
     <string name="cabinet_detail">详情:</string>
     <string name="cabinet_anomaly">异常:</string>
+    <string name="tv_room_temperature">温度:</string>
+    <string name="humidity">湿度:</string>
 
 </resources>

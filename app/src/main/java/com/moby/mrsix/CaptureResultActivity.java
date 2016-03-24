@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.moby.mrsix.zxing.Intents;
 
@@ -70,7 +71,7 @@ public class CaptureResultActivity extends Activity implements View.OnClickListe
                 finish();
                 break;
             case R.id.btn_qrcode_save:
-
+                Toast.makeText(this, "Save Data", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+
+        <ImageButton
+            android:id="@+id/ibtn_room_return"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_return" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/user" />
+
+        <TextView
+            android:id="@+id/tv_room_user"
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            android:text="username"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_room_date"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="60dp"
+            android:gravity="center"
+            android:text="2016-03-15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88Cabinet"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_room_patrol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="First Patrol"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_room_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="88/88"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_room_temperature" />
+
+        <TextView
+            android:id="@+id/tv_room_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88.88" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/humidity" />
+
+        <TextView
+            android:id="@+id/tv_room_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="88.88%" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/line" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ListView
+            android:id="@+id/lv_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
