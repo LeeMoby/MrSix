@@ -62,7 +62,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         // init intent
         intent_index2patrolIndex = new Intent(this, PatrolIndexActivity.class);
         //init user
-        username = baseApplication.getLogin_user();
+        username = baseApplication.getLoginUser();
         tv_index_user.setText(username);
         //init today data
         tv_index_patrol_number.setText("127");
@@ -113,7 +113,7 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        baseApplication.setPatrol_times(position);
+        baseApplication.setPatrolTimes(position);
         startActivity(intent_index2patrolIndex);
     }
 

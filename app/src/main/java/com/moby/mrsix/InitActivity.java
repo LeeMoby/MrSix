@@ -47,7 +47,7 @@ public class InitActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_enter) {
-            mApplication.setLogin_user(String.valueOf(et_user.getText()));
+            mApplication.setLoginUser(String.valueOf(et_user.getText()));
             startActivity(intent_init2index);
         }
 

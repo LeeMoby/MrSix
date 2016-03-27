@@ -56,8 +56,8 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         setContentView(R.layout.patrol_index);
         //init
         baseApplication = (BaseApplication) getApplication();
-        username = baseApplication.getLogin_user();
-        patrolTimes = baseApplication.getPatrol_times();
+        username = baseApplication.getLoginUser();
+        patrolTimes = baseApplication.getPatrolTimes();
         ibtn_patrol_return = (ImageButton) findViewById(R.id.ibtn_patrol_return);
         ibtn_patrol_index_left = (ImageButton) findViewById(R.id.ibtn_patrol_index_left);
         ibtn_patrol_index_right = (ImageButton) findViewById(R.id.ibtn_patrol_index_right);
