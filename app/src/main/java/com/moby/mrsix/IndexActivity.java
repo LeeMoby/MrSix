@@ -41,15 +41,45 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
     private String[] anomalyArray;
     private String[] photoArray;
     private Intent intent_index2patrolIndex;
-    private String dateStr;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_main);
+        initActivity();
+        initData();
+        initListViewData();
+        //init adapter
+        simpleAdapter = new SimpleAdapter(this, dataList, R.layout.index_listview, keyArray, valueArray);
+        lv_index.setAdapter(simpleAdapter);
+        initListener();
+    }
+
+    private void initListener() {
+        //init listener
+        lv_index.setOnItemClickListener(this);
+        ibtn_return.setOnClickListener(this);
+    }
+
+    private void initData() {
+        // init intent
+        intent_index2patrolIndex = new Intent(this, PatrolIndexActivity.class);
+        // init user
+        username = baseApplication.getLoginUser();
+        tv_index_user.setText(username);
+        // init today data
+        tv_index_patrol_number.setText("127");
+        tv_index_anomaly_number.setText("23");
+        tv_index_photo_number.setText("36");
+        // init date
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        tv_patrol_index_date.setText(dateFormat.format(new Date()));
+    }
+
+    private void initActivity() {
         //init
-        baseApplication = (BaseApplication)getApplication();
+        baseApplication = (BaseApplication) getApplication();
         ibtn_return = (ImageButton) findViewById(R.id.ibtn_return);
         tv_index_user = (TextView) findViewById(R.id.tv_index_user);
         tv_index_date = (TextView) findViewById(R.id.tv_index_date);
@@ -59,29 +89,6 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         tv_index_photo_number = (TextView) findViewById(R.id.tv_index_photo_number);
         lv_index = (ListView) findViewById(R.id.lv_index);
         dataList = new ArrayList<Map<String, Object>>();
-        // init intent
-        intent_index2patrolIndex = new Intent(this, PatrolIndexActivity.class);
-        //init user
-        username = baseApplication.getLoginUser();
-        tv_index_user.setText(username);
-        //init today data
-        tv_index_patrol_number.setText("127");
-        tv_index_anomaly_number.setText("23");
-        tv_index_photo_number.setText("36");
-
-        initDate();
-        tv_patrol_index_date.setText(dateStr);
-        //init ListView data
-
-        initListViewData();
-        //init adapter
-        simpleAdapter = new SimpleAdapter(this, dataList, R.layout.index_listview, keyArray, valueArray);
-        lv_index.setAdapter(simpleAdapter);
-        //init listener
-        lv_index.setOnItemClickListener(this);
-        ibtn_return.setOnClickListener(this);
-
-
     }
 
     private void initListViewData() {
@@ -104,12 +111,6 @@ public class IndexActivity extends Activity implements AdapterView.OnItemClickLi
         }
 
     }
-    private void initDate() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        dateStr = dateFormat.format(new Date());
-
-    }
-
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
