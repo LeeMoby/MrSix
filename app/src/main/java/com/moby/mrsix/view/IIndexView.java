@@ -3,5 +3,6 @@ package com.moby.mrsix.view;
 /**
  * Created by Moby on 16/3/29.
  */
-public class IIndexView {
+public interface IIndexView {
+
 }
