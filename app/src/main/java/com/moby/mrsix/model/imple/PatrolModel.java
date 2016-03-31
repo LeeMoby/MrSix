@@ -1,8 +1,10 @@
 package com.moby.mrsix.model.imple;
 
+import com.moby.mrsix.SystemConstants;
 import com.moby.mrsix.bean.PatrolBean;
 import com.moby.mrsix.model.IPatrolModel;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,7 +16,9 @@ public class PatrolModel implements IPatrolModel {
 
     @Override
     public PatrolBean getPatrolByID(String patrolID) {
-        return null;
+        PatrolBean patrolBean = new PatrolBean();
+
+        return patrolBean;
     }
 
     @Override

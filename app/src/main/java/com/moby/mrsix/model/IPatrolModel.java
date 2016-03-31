@@ -9,12 +9,7 @@ import java.util.List;
  * Created by Moby on 16/3/28.
  */
 public interface IPatrolModel {
-    public static final String PATROL_NUMBER = "patrolNumber";
-    public static final String ANOMALY_NUMBER = "anomalyNumber";
-    public static final String PHOTO_NUMBER = "photoNumber";
-    public static final String CABINET_NUMBER = "cabinetNumber";
-    public static final String TEMPERATURE = "temperature";
-    public static final String HUMIDITY = "humidity";
+
 
     PatrolBean getPatrolByID(String patrolID);
     PatrolBean getPatrolByDateAndTimesAndCabinetID(String cabinetID);
