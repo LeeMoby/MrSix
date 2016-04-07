@@ -3,6 +3,7 @@ package com.moby.mrsix;
 import java.text.SimpleDateFormat;
 
 /**
+ * 系统常量
  * Created by Moby on 16/3/31.
  */
 public final class SystemConstants {
