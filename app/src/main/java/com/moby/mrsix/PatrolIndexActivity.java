@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.moby.mrsix.bean.RoomBean;
 import com.moby.mrsix.zxing.CaptureActivity;
 import com.moby.mrsix.zxing.Intents;
 
@@ -37,7 +38,6 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
     private ListView lv_patrol_index;
     private PatrolIndexAdapter patrolIndexAdapter;
     private String[] fromArray;
-    private int[] toArray;
     private String[] roomNameArray;
     private String[] roomTypeArray;
     private String[] temperatureArray;
@@ -84,6 +84,7 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
         ibtn_patrol_return.setOnClickListener(this);
         ibtn_patrol_index_left.setOnClickListener(this);
         ibtn_patrol_index_right.setOnClickListener(this);
+        lv_patrol_index.setOnItemClickListener(this);
 
     }
 
@@ -118,7 +119,6 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
 
     private void initListViewData() {
         fromArray = new String[]{"room", "roomType", "temperature", "humidity", "alreadyPatrol", "countPatrol", "anomaly"};
-//        toArray = new int[]{R.id.tv_patrol_index_listview_room, R.id.tv_patrol_index_listview_room_type, R.id.tv_patrol_index_listview_temperature, R.id.tv_patrol_index_listview_humidity, R.id.tv_patrol_index_listview_patrol_already, R.id.tv_patrol_index_listview_patrol_count, R.id.tv_patrol_index_listview_anomaly};
         roomNameArray = new String[]{"21", "22", "12", "13", "102", "110", "204", "212", "00", "01"};
         roomTypeArray = new String[]{"机房", "机房", "机房", "机房", "弱电间", "弱电间", "弱电间", "弱电间", "暗室", "辅楼"};
         temperatureArray = new String[]{"24.3", "23.3", "21.5", "22.6", "19.3", "19.6", "18.7", "18.3", "17.5", "24.5"};
@@ -188,7 +188,8 @@ public class PatrolIndexActivity extends Activity implements View.OnClickListene
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        intent_patrol2room.putExtra("position", position);
-        startActivity(intent_patrol2room);
+        Toast.makeText(this, "" + position, Toast.LENGTH_SHORT).show();
+//        intent_patrol2room.putExtra("position", position);
+//        startActivity(intent_patrol2room);
     }
 }
